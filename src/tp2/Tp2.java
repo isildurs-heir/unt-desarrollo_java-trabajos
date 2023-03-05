@@ -66,6 +66,7 @@ public class Tp2 {
         */
         //----------------------
         //c)_
+        /*
         int x = 54;
         int cantidad = 10;
         int numeros[] = new int[cantidad];
@@ -82,6 +83,18 @@ public class Tp2 {
             }
         }
         System.out.println("La suma de los numeros menores a " + x + " es: " + acum);
+        */
+        //---------------
+        //2)_
+        String nombres[] = new String[10];
+        String str = new String();
+        str = "jon,cyril,francis,derek,tai,derrick,curtis,stipe,serghei,alexander";
+        nombres = str.split(",");
+        
+        for (int i=0; i < nombres.length; i++){
+            System.out.println(nombres[i]);
+        }
     }
+    
     
 }
