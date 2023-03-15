@@ -18,7 +18,7 @@ public class Tp2 {
         */
         //-----------------------------------
         //b)_
-        /*
+        
         int numeros[] = new int[3];
         int num1 = 3;
         int num2 = 2;
@@ -63,7 +63,7 @@ public class Tp2 {
         for (int  i = 0; i < 3; i++){
             System.out.println(numeros[i]);
         }
-        */
+        
         //----------------------
         //c)_
         /*
@@ -86,6 +86,7 @@ public class Tp2 {
         */
         //---------------
         //2)_
+	/*
         String nombres[] = new String[10];
         String str = new String();
         str = "jon,cyril,francis,derek,tai,derrick,curtis,stipe,serghei,alexander";
@@ -94,6 +95,7 @@ public class Tp2 {
         for (int i=0; i < nombres.length; i++){
             System.out.println(nombres[i]);
         }
+	*/
     }
     
     
