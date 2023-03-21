@@ -25,9 +25,9 @@ public class Carrito {
     
     public void mostrarItems(){
         if(!this.lista.isEmpty()){
-            System.out.println("Carrito de NOMBRE_DE_PERSONA");
+            System.out.println("Detalle de carrito:");
             for(int i=0; i<this.lista.size();i++){
-                System.out.println("\nItem " + (i+1));
+                System.out.println("Item " + (i+1));
                 System.out.println(this.lista.get(i).toString());
             }
             System.out.println("\nValor total del carrito: " + this.valorTotal());

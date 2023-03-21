@@ -9,8 +9,8 @@ public class Test {
         c1.agregarProducto(p1, 2);
         c1.agregarProducto(p2,4);
         c1.mostrarCarrito();
-        //c1.pagar();
-        //c1.mostrarCarrito();
+        c1.pagar();
+        c1.mostrarCarrito();
         c1.vaciarCarrito();
     }
     
