@@ -38,7 +38,7 @@ public class Producto {
     public String detalle(){
         return  "Producto: " + this.getCodigoDeBarras() +
                 "\nNombre: " + this.getNombre() + 
-                "\nPrecio: " + this.getPrecio() + "\n";
+                "\nPrecio: " + this.getPrecio();
         
     }
     

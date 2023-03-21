@@ -38,7 +38,7 @@ public class ItemCarrito {
     
     @Override
     public String toString(){
-        return this.getProducto().ItemView() +
+        return this.getProducto().detalle() +
                "\nCantidad: " + this.getCantidad() +
                "\nValor: " + this.getValor();
     }

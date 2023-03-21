@@ -20,4 +20,24 @@ public class Cliente {
     public void mostrarCarrito(){
         this.carroDeCompras.mostrarItems();
     }
+    
+    public void pagar(){
+        if(!this.carroDeCompras.isEmpty()){
+            System.out.println("Total pagado: " + this.carroDeCompras.valorTotal());
+            this.carroDeCompras.vaciar();
+        }
+        else{
+            System.out.println("El carro de compras esta vacio.");
+        }
+    }
+    
+    public void vaciarCarrito(){
+        if(!this.carroDeCompras.isEmpty()){
+            this.carroDeCompras.vaciar();
+            System.out.println("Carro vaciado");
+        }
+        else{
+            System.out.println("Carrito vacio");
+        }
+    }
 }
