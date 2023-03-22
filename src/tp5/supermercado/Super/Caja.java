@@ -20,9 +20,13 @@ public class Caja {
     public void Cobrar(Cliente cliente) {
         ArrayList<ItemCarrito> items = (cliente.getCarrito()).getItems();
         if (cliente.descuento()) {
-            for (ItemCarrito item : items) {
-                this.total += validarDescuento(cliente.getDescuento(), item);
-            }
+            items.forEach(item -> {
+                this.total = this.total + validarDescuento(cliente.getDescuento(), item);
+                System.out.println("total: " + this.total);
+            });
+        }
+        else{
+            this.total = cliente.getCarrito().valorTotal();
         }
         System.out.println("\n/***************Caja*****************/");
         System.out.println("Total a pagar: " + this.total);
@@ -41,25 +45,26 @@ public class Caja {
         double descuentoActual;
         String categoriaDescuento = descuento.getCategoria();
         String categoriaProducto = item.getProducto().getCategoria();
-
-        if (categoriaDescuento.equals(categoriaProducto)) {
+        if (categoriaDescuento.equals(categoriaProducto)) { // si la cateogria del descuento es la misma que la del producto
             porcentajeDescuento = (double) descuento.getDescuento() / 100;
             descuentoActual = (totalItem * porcentajeDescuento);
-            if (this.categorias.containsKey(categoriaDescuento)) {
-                if (this.categorias.get(categoriaDescuento) < descuento.getTope()) {
-                    if ((this.categorias.get(categoriaDescuento) + descuentoActual) <= descuento.getTope()) {
+            if (this.categorias.containsKey(categoriaDescuento)) { // si ya hay algun descuento registrado en el proceso de cobro
+                if (this.categorias.get(categoriaDescuento) < descuento.getTope()) {   // si el descuento no alcanzo su tope
+                    if ((this.categorias.get(categoriaDescuento) + descuentoActual) <= descuento.getTope()) { // si el descuento actual mas el acumulado no supera el tope
                         this.categorias.put(categoriaDescuento, this.categorias.get(categoriaDescuento) + descuentoActual);
-                        totalItem = totalItem - descuentoActual;
-                    } else {
-                        descuentoActual = descuento.getTope() - (this.categorias.get(categoriaDescuento) + descuentoActual);
-                        totalItem = totalItem - descuentoActual;
+                        totalItem -= descuentoActual;
+                    } else { // el descuento actual mas el acumulado supera el tope
+                        descuentoActual = descuento.getTope() - this.categorias.get(categoriaDescuento);
+                        // descuento acumulado + descuento actual >= tope. -> tope - descuento acumulado  es lo que tengo que descontar
+                        totalItem -= descuentoActual;
                         this.categorias.put(categoriaDescuento, descuento.getTope());
                     }
                 }
-            } else {
+            } else { // se descuenta por primera vez esta categoria
                 this.categorias.put(categoriaDescuento, descuentoActual);
                 totalItem -= descuentoActual;
             }
+            
         }
         return totalItem;
     }
