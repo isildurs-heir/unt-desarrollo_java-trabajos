@@ -1,4 +1,4 @@
-package supermercado;
+package supermercado.Super;
 
 public class ItemCarrito {
     

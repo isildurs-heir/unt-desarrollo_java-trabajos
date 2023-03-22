@@ -1,14 +1,21 @@
-package supermercado;
+package supermercado.Super;
 
-public class Producto {
+public abstract class Producto {
+    
     private String Nombre;
     private double Precio;
     private long codigoDeBarras;
+    private String categoria;
 
-    public Producto(String Nombre, double Precio) {
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public Producto(String Nombre, double Precio,String categoria) {
         this.Nombre = Nombre;
         this.Precio = Precio;
         this.codigoDeBarras = (long) (Math.random()*999999999 + 111111111);
+        this.categoria = categoria;
     }
 
     public String getNombre() {

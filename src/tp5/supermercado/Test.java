@@ -1,17 +1,23 @@
 package supermercado;
 
+import supermercado.Super.*;
+import supermercado.nosuper.*;
+
 public class Test {
 
     public static void main(String[] args) {
-        Producto p1 = new Producto("jabon",35.23);
-        Producto p2 = new Producto("jamon",25.14);
-        Cliente c1 = new Cliente("Javier",40792902);
-        c1.agregarProducto(p1, 2);
-        c1.agregarProducto(p2,4);
+        PLimpieza p1 = new PLimpieza("jabon",35.23);
+        PLimpieza p2 = new PLimpieza("detergente",150);
+        Caja caja = new Caja();
+        DescLimpieza d1 = new DescLimpieza();
+        Cliente c1 = new Cliente("Javier",40792902,d1);
+        
+        c1.agregarProducto(p1, 10);
+        c1.agregarProducto(p2,10);
+        
         c1.mostrarCarrito();
-        c1.pagar();
-        c1.mostrarCarrito();
-        c1.vaciarCarrito();
+        caja.Cobrar(c1);
+        
     }
     
 }

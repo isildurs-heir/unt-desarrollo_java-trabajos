@@ -1,4 +1,6 @@
-package supermercado;
+package supermercado.nosuper;
+import supermercado.Super.Producto;
+import supermercado.Super.ItemCarrito;
 import java.util.ArrayList;
 
 
@@ -8,6 +10,18 @@ public class Carrito {
 
     public Carrito() {
         this.lista = new ArrayList<>();
+    }
+
+    public ArrayList<ItemCarrito> getItems() {
+        return lista;
+    }
+    
+    public boolean isEmpty(){
+        return this.lista.isEmpty();
+    }
+    
+    public void vaciar(){
+        this.lista.clear();
     }
     
     public void nuevoItem(Producto producto,int cantidad){
@@ -37,11 +51,5 @@ public class Carrito {
         }
     }
     
-    public boolean isEmpty(){
-        return this.lista.isEmpty();
-    }
     
-    public void vaciar(){
-        this.lista.clear();
-    }
 }
