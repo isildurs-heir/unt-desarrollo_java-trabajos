@@ -32,7 +32,7 @@ INSERT INTO Departamento (Nombre,Presupuesto)
 	VALUES ('Sistemas',20145648.21),('Logistica','15635458.25'),('Compras',21548985.36),('Artes',13254846.23),('ELIMINAR',2);
 
 INSERT INTO Empleado (dni,nombre,apellido,nacionalidad,departamento)
-VALUES (40792902,'Javier','Salinas','Argentina','1'),
+VALUES (69318198,'Javier','Salinas','Argentina','1'),
 	   (123456,'Michael','Jackson','Estados Unidos','4'),
        (654321,'Paul','McCartney','Inglaterra','4'),
        (852456,'Ringo','Bonavena','Argentina',3),
